@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<!-- patch 13.12.2024 -->
+<!-- patch 22.02.2025 -->
 <!-- ################################ General Settings ################################ -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- Resistance | Расстояние между оконами, окнами и краем монитора -->
   <resistance>
-    <strength>10</strength>
-    <screen_edge_strength>20</screen_edge_strength>
+    <strength>100</strength>
+    <screen_edge_strength>200</screen_edge_strength>
   </resistance>
   <!-- Focus | Фокус-покус -->
   <focus>
@@ -18,11 +18,11 @@
   </focus>
   <!-- Placement new windows | Позиционирование новых окон -->
   <placement>
-    <policy>Smart</policy>
+    <policy>Center</policy>
     <center>yes</center>
     <monitor>Active</monitor>
     <primaryMonitor>Mouse</primaryMonitor>
-  </placement>
+  </placement> 
   <!-- Theme | Тема гтк-->
   <theme>
     <name>OB-Arc-Dark</name>
@@ -198,27 +198,14 @@
         <to>3</to>
       </action>
     </keybind>
-    <!-- Action : Add/Remove Desktop -->
-    <keybind key="W-equal">
-      <action name="AddDesktop">
-        <where>last</where>
-      </action>
-      <action name="Execute">
-        <command>dunstify -u low -h string:x-dunst-stack-tag:obaction "Added New Desktop"</command>
-      </action>
-    </keybind>
-    <keybind key="W-minus">
-      <action name="RemoveDesktop">
-        <where>last</where>
-      </action>
-      <action name="Execute">
-        <command>dunstify -u low -h string:x-dunst-stack-tag:obaction "Removed Last Desktop"</command>
-      </action>
-    </keybind>
+
+
     <!-- Action : ToggleShowDesktop -->
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+    
+    
     <!--Wallper Changer-->
     <keybind key="F12">
       <action name="Execute">
@@ -990,28 +977,12 @@
   <!-- ################################ Applications Rules ################################ -->
   <applications>
     <application class="*">
-      <x>center</x>
-      <y>center</y>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
       <focus>yes</focus>
-      <decor>yes</decor>
-    </application>
-    <application name="obconf">
-      <position force="yes">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <size>
-        <width>50%</width>
-      </size>
-    </application>
-    <application title="MPlayer">
       <decor>no</decor>
-    </application>
-    <application title="Nitrogen">
-      <position force="yes">
-        <x>center</x>
-        <y>center</y>
-      </position>
     </application>
     <application title="kitty">
       <decor>no</decor>
