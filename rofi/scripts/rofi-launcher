@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Импорт текущей темы
+RASI="$HOME/.config/rofi/launcher.rasi"
+
+if ! [`pidof rofi`]; then
+    rofi \
+        -show drun \
+        -theme "${RASI}"
+else
+    kill -9 `$(pidof rofi)`
+fi
