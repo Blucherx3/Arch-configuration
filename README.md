@@ -1,1 +1,2 @@
-# Blucher`s system setings
+# Blucher`s Arch Linux configs
+
